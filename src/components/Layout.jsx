@@ -1,8 +1,10 @@
-import { CssBaseline, ThemeProvider } from "@mui/material";
+import { CssBaseline, ThemeProvider, createTheme } from "@mui/material";
+import Header from "./Header";
+import { Outlet } from "react-router-dom";
 
 const theme = createTheme({
   pallete: {
-    mode: "dark",
+    mode: "light",
   },
 });
 
@@ -10,8 +12,10 @@ export default function Layout() {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <header></header>
-      <main></main>
+      <Header />
+      <main>
+        <Outlet />
+      </main>
       <footer></footer>
     </ThemeProvider>
   );
